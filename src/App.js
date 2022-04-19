@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useMemo, useState, useEffect } from "react"
+import { QueryClient, QueryClientProvider, } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import MainApp from './MainApp'
+import Creation from './Creation'
+
+const queryClient = new QueryClient()
+const MainContext = createContext()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <QueryClientProvider client={queryClient}>
+      <MainProvider>
+        <Router >
+          <MiddleApp />
+        </Router>
+      </MainProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
 }
 
-export default App;
+function MiddleApp() {
+
+  useEffect(() => {
+    if (!localStorage.getItem('garbage')) {
+      localStorage.setItem('garbage', Math.random().toString(36).slice(2, 19))
+    }
+  }, [])
+  return (
+    <div className='main'>
+      <Routes>
+        <Route path='/hub' element={<MainApp />} />
+        <Route path='/' element={<Creation />} />
+      </Routes>
+    </div>
+  )
+}
+
+function MainProvider(props) {
+  const garbage = localStorage.getItem('garbage')
+  const [context, setContext] = useState({
+    garbage,
+  })
+  const value = useMemo(() => ({ context, setContext }), [context])
+  return (
+    <MainContext.Provider {...props} value={value} />
+  )
+}
+
+export { App, MainContext }

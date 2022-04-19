@@ -1,0 +1,206 @@
+h1 {
+  font-size: 2.5em;
+  background: linear-gradient(170deg, rgb(154, 25, 225), rgb(41, 112, 255));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(41deg, rgb(218 233 255) 0%, rgb(255 251 226) 100%);
+}
+
+.main a {
+  outline: none;
+  border: none;
+  display: block;
+  width: fit-content;
+  color: rgb(124, 134, 247);
+  font-size: 1.1em;
+  font-family: var(--fonts);
+  font-weight: 500;
+  margin: .35rem 0;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.main-form {
+  display: flex;
+}
+
+.main-form textarea {
+  outline: none;
+  width: 100%;
+  color: white;
+  background: rgb(13, 23, 73);
+  resize: vertical;
+  max-width: 100%;
+  min-height: 150px;
+  font-size: 1em;
+  border-radius: .5rem;
+  padding: .5rem;
+  border: none;
+  outline: none;
+  margin: .5rem 0;
+  font-weight: 500;
+  font-family: 'Fira Code', 'Fira Mono', 'Lucida Console', 'Courier New', monospace;
+}
+
+.main-form button {
+  outline: none;
+  border: none;
+  display: block;
+  background: rgb(225, 238, 255);
+  color: rgb(0, 38, 255);
+  width: fit-content;
+  font-size: .9em;
+  font-weight: 700;
+  margin: .35rem;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.main-form button:hover {
+  box-shadow: 0 0 5px rgb(0, 38, 255, 40%);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 38, 255);
+
+}
+
+.main {
+  margin: 20px auto;
+  width: 1600px;
+  max-width: 90vw;
+  padding: 20px;
+  border-radius: 1rem;
+  background: rgb(255, 255, 255);
+  box-shadow: 2px 0 15px rgba(6, 8, 28, 10%);
+}
+
+.entries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  align-items: start;
+  margin: 25px 0;
+  transition: .3s all ease;
+}
+
+.entries .entry {
+  display: flex;
+  flex-direction: column;
+  background: rgb(241 247 255);
+  border: 2px solid rgba(58, 58, 255, 0.104);
+  /* box-shadow: 0px 4px 10px rgba(4, 11, 72, 0.1); */
+  border-radius: .75rem;
+  padding: .5em 0;
+}
+
+.index {
+  align-self: center;
+  background: rgb(131, 131, 227);
+  width: 2em;
+  height: 2em;
+  margin: -1em 0 0 0;
+  text-align: center;
+  line-height: 2em;
+  font-weight: 600;
+  color: white;
+  border-radius: 50rem;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .index {
+    background: rgba(7, 7, 255, 0.365);
+    backdrop-filter: blur(15px);
+  }
+}
+
+.entries button {
+  outline: none;
+  border: none;
+  display: block;
+  background: rgb(224, 230, 255);
+  color: rgb(0, 38, 255);
+  width: fit-content;
+  font-size: .9em;
+  font-weight: 700;
+  margin: .35rem auto;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.entries button:hover {
+  box-shadow: 2px 0 8px rgba(6, 28, 150, 0.344);
+  background: rgb(19, 47, 206);
+  color: white;
+}
+
+button.red {
+  color: rgb(177, 0, 0);
+  background: rgb(255, 225, 225);
+}
+
+button.red:hover {
+  box-shadow: 2px 0 8px rgba(93, 11, 26, 0.344);
+  background: rgb(206, 19, 19);
+  color: white;
+}
+
+
+button.neutral {
+  color: rgb(0, 0, 0);
+  background: rgb(228, 229, 231);
+}
+
+button.neutral:hover {
+  box-shadow: 2px 0 8px rgba(60, 57, 65, 0.344);
+  background: rgb(41, 41, 41);
+  color: white;
+}
+
+.entry form {
+  width: 100%;
+  padding: .5rem .5rem 0 .5rem;
+
+}
+
+.content {
+  font-family: var(--fonts);
+  font-size: 1.2em;
+  background: white;
+  color: rgb(13, 23, 73);
+  border-radius: .5rem;
+  padding: .5rem;
+  margin: .5rem;
+  font-weight: 500;
+  font-family: 'Fira Code', 'Fira Mono', 'Lucida Console', 'Courier New', monospace;
+}
+
+
+textarea.content {
+  outline: none;
+  width: 100%;
+  color: white;
+  background: rgb(13, 23, 73);
+  max-width: 100%;
+  min-height: 150px;
+  font-size: 0.9em;
+  margin: 0 0;
+  border: 3px solid rgb(19, 47, 206, 20%);
+}
+
+@media screen and (max-width: 800px) {
+  .main-form {
+    flex-direction: column;
+  }
+
+  .main-form button {
+    margin: .5em auto;
+  }
+}
