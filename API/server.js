@@ -13,8 +13,8 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/', require('./routes/mainRoutes'))
 app.use('/api/status', (req, res) => res.status(200).send('Running...'))
+app.use('/api/', require('./routes/mainRoutes'))
 
 app.use(express.static(path.join(__dirname, '../build')))
 

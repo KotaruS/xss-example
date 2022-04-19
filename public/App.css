@@ -119,16 +119,19 @@ body {
   }
 }
 
+.buttons {
+  display: flex;
+}
+
 .entries button {
   outline: none;
   border: none;
-  display: block;
   background: rgb(224, 230, 255);
   color: rgb(0, 38, 255);
   width: fit-content;
   font-size: .9em;
   font-weight: 700;
-  margin: .35rem auto;
+  margin: .35rem;
   padding: .5rem .75rem;
   border-radius: .5rem;
   cursor: pointer;

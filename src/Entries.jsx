@@ -40,6 +40,7 @@ function Entries({ entries, }) {
       {entries && entries.map((entry, index) => (
         <div className="entry" key={entry._id}>
           <p className="index">{index + 1}</p>
+
           {(select === entry._id) ?
             <form action='/' onSubmit={handleUpdate}>
               <textarea className="content" name='content' id='content' defaultValue={entry.content} />
@@ -47,13 +48,15 @@ function Entries({ entries, }) {
             </form>
             : <div className="content">{entry.content}</div>
           }
-          <button onClick={e => { html.current.innerHTML = entry.content }}>Aktivovat XSS</button>
-          {(context.garbage === entry.author) && (
-            <button className="red" onClick={e => deleter.mutate(entry._id)}>Smazat</button>
-          )}
-          {(context.garbage === entry.author) && (
-            <button className="neutral" onClick={e => setSelect(entry._id)}>Editovat</button>
-          )}
+          <div className="buttons">
+            <button onClick={e => { html.current.innerHTML = entry.content }}>Aktivovat XSS</button>
+            {(context.garbage === entry.author) && (
+              <button className="red" onClick={e => deleter.mutate(entry._id)}>Smazat</button>
+            )}
+            {(context.garbage === entry.author) && (
+              <button className="neutral" onClick={e => setSelect(entry._id)}>Editovat</button>
+            )}
+          </div>
         </div>
       ))}
     </div>
