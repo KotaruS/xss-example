@@ -17,6 +17,9 @@ app.use('/api/status', (req, res) => res.status(200).send('Running...'))
 app.use('/api/', require('./routes/mainRoutes'))
 
 app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+  res.sendFile('index.html', { root: path.join(__dirname, '../build/') });
+});
 
 app.use(errorHandler)
 
