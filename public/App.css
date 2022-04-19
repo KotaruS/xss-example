@@ -28,6 +28,7 @@ body {
 
 .main-form {
   display: flex;
+  margin: 0 0 25px;
 }
 
 .main-form textarea {
@@ -51,6 +52,7 @@ body {
 .main-form button {
   outline: none;
   border: none;
+  align-self: baseline;
   display: block;
   background: rgb(225, 238, 255);
   color: rgb(0, 38, 255);
@@ -58,7 +60,7 @@ body {
   font-size: .9em;
   font-weight: 700;
   margin: .35rem;
-  padding: .5rem .75rem;
+  padding: .75rem;
   border-radius: .5rem;
   cursor: pointer;
   transition: .3s all ease;
@@ -86,7 +88,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   align-items: start;
-  margin: 25px 0;
+  margin: 0;
   transition: .3s all ease;
 }
 
