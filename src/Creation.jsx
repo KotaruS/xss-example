@@ -1,13 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from "react-query"
-import { useContext, useEffect, useRef, useState } from "react"
+import { useContext, } from "react"
 import { MainContext } from "./App"
-import { createEntry, getEntriesOfAuthor, deleteEntry } from "./fetches"
+import { createEntry, getEntriesOfAuthor } from "./fetches"
 import Entries from "./Entries"
 import { Link } from "react-router-dom"
 
 function Creation() {
   const { context, setContext } = useContext(MainContext)
-  // const [html, setHtml] = useState({ __html: '' })
   const queryClient = useQueryClient()
   const create = useMutation(createEntry, {
     onSuccess: () => {

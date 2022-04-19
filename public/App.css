@@ -9,6 +9,7 @@ h1 {
 body {
   background: rgb(255, 255, 255);
   background: linear-gradient(41deg, rgb(218 233 255) 0%, rgb(255 251 226) 100%);
+  min-height: 100vh;
 }
 
 .main a {
@@ -101,26 +102,28 @@ body {
 
 .index {
   align-self: center;
-  background: rgb(131, 131, 227);
+  background: rgb(108, 113, 207);
   width: 2em;
   height: 2em;
-  margin: -1em 0 0 0;
+  margin: -1.5em 0 0 0;
   text-align: center;
+  font-size: .8rem;
   line-height: 2em;
-  font-weight: 600;
+  font-weight: 800;
   color: white;
   border-radius: 50rem;
 }
 
 @supports (backdrop-filter: blur(1px)) {
   .index {
-    background: rgba(7, 7, 255, 0.365);
+    background: rgba(14, 14, 252, 50%);
     backdrop-filter: blur(15px);
   }
 }
 
 .buttons {
   display: flex;
+  padding: 0 .5rem;
 }
 
 .entries button {
@@ -131,7 +134,7 @@ body {
   width: fit-content;
   font-size: .9em;
   font-weight: 700;
-  margin: .35rem;
+  margin: .35rem .35rem .35rem 0;
   padding: .5rem .75rem;
   border-radius: .5rem;
   cursor: pointer;
@@ -173,6 +176,11 @@ button.neutral:hover {
 
 }
 
+.entry form button {
+  width: 100%;
+  margin: .5rem 0;
+}
+
 .content {
   font-family: var(--fonts);
   font-size: 1.2em;
@@ -205,5 +213,16 @@ textarea.content {
 
   .main-form button {
     margin: .5em auto;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .entries {
+    grid-template-columns: 1fr
+  }
+
+  .content {
+    word-break: break-all;
   }
 }

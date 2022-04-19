@@ -25,24 +25,8 @@ const createEntry = async (data) => {
   }
 }
 
-const getEntry = async ({ queryKey }) => {
-  try {
-    const [_key, key, value] = queryKey
-    const query = (key && value) ? `/?${key}=${value}` : ''
-    const res = await fetch(`${API_URL}/posts${query}`, {
-      headers: getConfig(),
-    })
-    const result = await res.json()
-    if (!res.ok) {
-      throw result.message
-    }
-    return result
-  } catch (err) {
-    throw new Error(err)
-  }
-}
 
-const getEntries = async ({ queryKey }) => {
+const getEntries = async () => {
   try {
     const res = await fetch(API_URL)
     const result = await res.json()
@@ -108,7 +92,6 @@ const deleteEntry = async (uri) => {
 
 export {
   createEntry,
-  getEntry,
   getEntries,
   getEntriesOfAuthor,
   updateEntry,
