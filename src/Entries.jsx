@@ -36,7 +36,7 @@ function Entries({ entries, }) {
 
   return (
     <div className="entries">
-      <div style={{ 'display': 'none' }} ref={html}></div>
+      <div style={{ 'margin': '10px 0px' }} ref={html}></div>
       {entries && entries.map((entry, index) => (
         <div className="entry" key={entry._id}>
           <p className="index">{index + 1}</p>
