@@ -183,10 +183,11 @@ button.neutral:hover {
 
 .content {
   font-family: var(--fonts);
-  font-size: 1.2em;
+  font-size: 1.1em;
   background: white;
   color: rgb(13, 23, 73);
   border-radius: .5rem;
+  word-break: break-all;
   padding: .5rem;
   margin: .5rem;
   font-weight: 500;
@@ -198,6 +199,8 @@ textarea.content {
   outline: none;
   width: 100%;
   color: white;
+  word-break: normal;
+  overflow: auto;
   background: rgb(13, 23, 73);
   max-width: 100%;
   min-height: 150px;
