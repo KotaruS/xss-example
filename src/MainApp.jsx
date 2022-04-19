@@ -10,8 +10,8 @@ function MainApp() {
 
   return (
     <div>
-      <Link to='/'>« I want to add more</Link>
-      <h1>XSS scripts demo</h1>
+      <Link to='/'>« Chci zpátky</Link>
+      <h1>XSS demo</h1>
       <span style={{ 'display': 'none' }} ref={html}></span>
       <Entries entries={entries.data} />
     </div>

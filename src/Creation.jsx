@@ -24,8 +24,8 @@ function Creation() {
 
   return (
     <div>
-      <Link to='/hub'>To the results »</Link>
-      <h1>Enter Your scripts!</h1>
+      <Link to='/hub'>K výsledkům »</Link>
+      <h1>Místo pro vaše JavaScripty</h1>
       <form className="main-form" action="/" onSubmit={handleSubmit} method="post">
 
         <textarea rows="4" name="content" id="content" />
