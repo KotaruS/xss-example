@@ -9,6 +9,8 @@ const queryClient = new QueryClient()
 const MainContext = createContext()
 
 function App() {
+  document.cookie = 'secret=oi22,lw4-2hjio24_'
+  document.cookie = 'password=oh no my password'
   return (
     <QueryClientProvider client={queryClient}>
       <MainProvider>
